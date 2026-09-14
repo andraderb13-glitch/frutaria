@@ -1,24 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>frutaria - entrar</title>
+    <title>Frutaria - Frutas fresquinhas</title>
     <link rel="stylesheet" href="tudo_lindo.css">
-  
 </head>
 <body>
-    
-    <div class="pagina-home">
-        <header class="cabecalho-home"><img src="img/fruteriaimg.png" width="250" height="100" alt="Logo Fakeflix" class="logo-home">
-           
-            <nav class="navegacao">
-                <a href="home.html" class="link">Home</a>
-                <a href="sobre.html" class="link">Sobre</a>
-                <a href="contato.html" class="link">Contato</a>
-            </nav>
-    </div>
-    
-</body>
+    <div class="fundo"></div>
 
+    <header class="cabecalho-home">
+        <img src="img/fruteriaimg.png" alt="Logo da Frutaria" class="logo-home">
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="#inicio" class="link">Home</a>
+            <button class="link link-botao" id="btnSobre" type="button">Sobre</button>
+            <button class="link link-botao" id="btnContato" type="button">Contato</button>
+        </nav>
+    </header>
+
+    <main class="conteudo" id="inicio">
+        <section class="hero">
+            <div>
+                <span class="etiqueta">🍊 direto da nossa fruteira</span>
+                <h1>Frutas fresquinhas para deixar seu dia mais gostoso!</h1>
+                <p>Escolha suas frutas, monte seu pedido e deixe o estagiario cuidar do estoque.</p>
+            </div>
+            <div class="hero-fruta" aria-hidden="true">🍎🍌🍊</div>
+        </section>
+
+        <section class="produtos-section">
+            <div class="titulo-section">
+                <div>
+                    <h2>Nossas frutas</h2>
+                    <p>Os produtos abaixo são carregados diretamente do nosso estoque.</p>
+                </div>
+                <button id="btnAtualizar" class="btn-secundario" type="button">↻ Atualizar</button>
+            </div>
+
+            <div id="statusApi" class="status">Carregando frutas...</div>
+            <div id="listaFrutas" class="grade-frutas"></div>
+        </section>
+    </main>
+
+    <!-- Modal Sobre -->
+    <div class="modal" id="modalSobre" aria-hidden="true">
+        <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="tituloSobre">
+            <button class="fechar-modal" data-fechar="modalSobre" aria-label="Fechar">&times;</button>
+            <div class="modal-icone">🍉</div>
+            <h2 id="tituloSobre">A história da Frutaria</h2>
+            <p>Reza a lenda que a Frutaria nasceu quando três amigos perceberam que tinham comprado tanta fruta para um churrasco que dava para alimentar o bairro inteiro.</p>
+            <p>O churrasco acabou, as frutas sobraram e surgiu a ideia: transformar o exagero em negócio. Assim nasceu a Frutaria, com uma missão simples: vender frutas gostosas, manter o estoque organizado e nunca mais subestimar a quantidade de bananas necessária para uma festa.</p>
+            <p class="destaque-modal">🍌 Desde então, seguimos firmes: fruta boa, preço justo e pouca chance de alguém sair daqui sem levar uma banana.</p>
+        </div>
+    </div>
+
+    <!-- Modal Contato -->
+    <div class="modal" id="modalContato" aria-hidden="true">
+        <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="tituloContato">
+            <button class="fechar-modal" data-fechar="modalContato" aria-label="Fechar">&times;</button>
+            <div class="modal-icone">📞</div>
+            <h2 id="tituloContato">Fale com a Frutaria</h2>
+            <p>Tem dúvida sobre um produto, pedido ou quer mandar um elogio para a nossa equipe?</p>
+            <div class="contatos-lista">
+                <div><strong>📱 WhatsApp</strong><span>(51) 99999-0000</span></div>
+                <div><strong>✉️ E-mail</strong><span>contato@frutaria.com.br</span></div>
+                <div><strong>📍 Endereço</strong><span>Rua das Frutas, 100 - Centro</span></div>
+                <div><strong>🕐 Atendimento</strong><span>Segunda a sexta, das 8h às 18h</span></div>
+            </div>
+            <p class="aviso-generico">* Contatos e endereço são informações demonstrativas para o trabalho acadêmico.</p>
+        </div>
+    </div>
+
+    <!-- Modal de compra -->
+    <div class="modal" id="modalCompra" aria-hidden="true">
+        <div class="modal-caixa compra-caixa" role="dialog" aria-modal="true" aria-labelledby="tituloCompra">
+            <button class="fechar-modal" data-fechar="modalCompra" aria-label="Fechar">&times;</button>
+            <div class="modal-icone">🛒</div>
+            <h2 id="tituloCompra">Finalizar pedido</h2>
+            <p id="resumoCompra"></p>
+
+            <form id="formVenda">
+                <label for="clienteVenda">Cliente</label>
+                <select id="clienteVenda" required>
+                    <option value="">Carregando clientes...</option>
+                </select>
+
+                <label for="quantidadeVenda">Quantidade</label>
+                <input id="quantidadeVenda" type="number" min="1" value="1" required>
+
+                <button class="btn-principal" type="submit">Confirmar pedido</button>
+            </form>
+            <div id="resultadoVenda" class="resultado"></div>
+        </div>
+    </div>
+
+    <script src="leva_e_tras.js"></script>
+</body>
 </html>
