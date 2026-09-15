@@ -33,9 +33,17 @@
             <div class="titulo-section">
                 <div>
                     <h2>Nossas frutas</h2>
-                    <p>Os produtos abaixo são carregados diretamente do nosso estoque.</p>
+                    <p>Os produtos abaixo são carregados diretamente dos campos de produção.</p>
                 </div>
                 <button id="btnAtualizar" class="btn-secundario" type="button">↻ Atualizar</button>
+            </div>
+
+            <div class="barra-pesquisa">
+                <label for="pesquisaFruta">🔎 Pesquisar fruta</label>
+                <div class="campo-pesquisa">
+                    <input id="pesquisaFruta" type="search" placeholder="Digite o nome da fruta..." autocomplete="off">
+                    <button id="btnLimparPesquisa" class="btn-secundario btn-limpar" type="button" title="Limpar pesquisa">Limpar</button>
+                </div>
             </div>
 
             <div id="statusApi" class="status">Carregando frutas...</div>

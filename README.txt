@@ -30,3 +30,11 @@ FUNCIONALIDADES DO FRONT
 - Pop-up Sobre com história fictícia e engraçada.
 - Pop-up Contato com informações genéricas.
 - Botão Atualizar para buscar os dados mais recentes da API.
+
+
+ATUALIZAÇÃO
+- Adicionada caixa de pesquisa de frutas (nome ou categoria).
+- O frontend usa a API em https://localhost:7190/api, conforme o launchSettings.json do backend enviado.
+- Se aparecer ERR_CONNECTION_REFUSED, abra o backend no Visual Studio e execute o perfil https.
+- O backend não foi alterado.
+- Se depois de iniciar o backend aparecer erro de CORS no Console do navegador, isso é uma configuração do backend; como combinado, este frontend não modifica o backend.
